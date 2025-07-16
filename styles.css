@@ -58,6 +58,6 @@ body {
 }
 
 .email-link:hover {
-    color: #ffa500; /* Color on hover */
+    color: #00bfff; /* Color on hover */
     text-decoration: underline;
 }
