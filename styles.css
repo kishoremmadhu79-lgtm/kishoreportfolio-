@@ -50,13 +50,6 @@ body {
     margin-top: 40px;
 }
 
-/* === Email Link Styling === */
-.email-link {
-    color: #00bfff; /* Change this to your favorite color */
-    font-weight: bold;
-    text-decoration: none;
-}
-
 .email-link:hover {
     color: #00bfff; /* Color on hover */
     text-decoration: underline;
