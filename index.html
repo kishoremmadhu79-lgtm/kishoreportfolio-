@@ -2,57 +2,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Kishore M Madhu - Portfolio</title>
-    <link rel="stylesheet" href="styles.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+    }
+    nav a {
+      padding: 1rem;
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background-color: #666;
+    }
+    .tab {
+      display: none;
+      padding: 2rem;
+    }
+    .tab.active {
+      display: block;
+    }
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1>Kishore M Madhu</h1>
-            <p>IMCA Student | Aspiring Data Analyst • Digital Marketer • AI/ML Enthusiast</p>
-        </div>
-    </header>
+  <header>
+    <h1>Welcome to My Portfolio</h1>
+  </header>
+  <nav>
+    <a href="#" onclick="showTab('home')">Home</a>
+    <a href="#" onclick="showTab('about')">About</a>
+    <a href="#" onclick="showTab('resume')">Resume</a>
+    <a href="#" onclick="showTab('portfolio')">Portfolio</a>
+    <a href="#" onclick="showTab('contact')">Contact</a>
+  </nav>
 
-    <main class="container">
-        <section class="card" id="about">
-            <h2>About Me</h2>
-            <p>I’m currently pursuing IMCA at De Paul Institute of Science and Technology (MG University). I'm passionate about using data to solve real-world problems, building marketing strategies, and exploring the power of AI.</p>
-        </section>
+  <div id="home" class="tab active">
+    <h2>Home</h2>
+    <p>Welcome to my personal portfolio website. Here you will find everything about me and my journey in technology.</p>
+  </div>
 
-        <section class="card" id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>Python • Power BI • SQL • Excel</li>
-                <li>Google Ads • SEO • Canva</li>
-                <li>Machine Learning (beginner)</li>
-            </ul>
-        </section>
+  <div id="about" class="tab">
+    <h2>About Me</h2>
+    <p>I'm an Integrated MCA student passionate about Artificial Intelligence, Machine Learning, and Full-Stack Development. This is where I showcase my skills and experiences.</p>
+  </div>
 
-        <section class="card" id="projects">
-            <h2>Projects</h2>
-            <ul>
-                <li><strong>Power BI Sales Dashboard:</strong> Visualized retail sales data to identify trends</li>
-                <li><strong>Google Ads Campaign:</strong> Simulated digital ad strategy for a fictional product</li>
-                <li><strong>Data Cleaning Script (Python):</strong> Automated missing value handling in datasets</li>
-            </ul>
-        </section>
+  <div id="resume" class="tab">
+    <h2>Resume</h2>
+    <p><strong>Education:</strong> Integrated MCA, [Your University Name]</p>
+    <p><strong>Skills:</strong> HTML, CSS, JavaScript, Python, C++, AI/ML, Git</p>
+    <p><strong>Certifications:</strong> IBM AI Engineering, Google Data Analytics, etc.</p>
+  </div>
 
-        <section class="card" id="certificates">
-            <h2>Certificates</h2>
-            <ul>
-                <li>Google Data Analytics Professional Certificate</li>
-                <li>Digital Marketing Fundamentals – Google</li>
-                <li>AI for Everyone – Coursera</li>
-            </ul>
-        </section>
-    </main>
+  <div id="portfolio" class="tab">
+    <h2>Portfolio</h2>
+    <ul>
+      <li>Personal Portfolio Website</li>
+      <li>AI Chatbot Project</li>
+      <li>ML Model for Prediction</li>
+      <li>Responsive Blog using HTML/CSS/JS</li>
+    </ul>
+  </div>
 
-    <footer class="footer">
-        <p>📫 Contact me: <a href="mailto:kishoremmadhu@gmail.com">kishoremmadhu@gmail.com</a></p>
-        <p>🌐 LinkedIn: linkedin.com/in/kishore-madhu</p>
-    </footer>
+  <div id="contact" class="tab">
+    <h2>Contact</h2>
+    <p>Email: yourname@example.com</p>
+    <p>LinkedIn: linkedin.com/in/yourprofile</p>
+    <p>GitHub: github.com/yourprofile</p>
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
