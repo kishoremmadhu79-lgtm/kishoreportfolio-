@@ -5,152 +5,152 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Portfolio</title>
   <style>
-    * {
-      box-sizing: border-box;
+    body {
       margin: 0;
-      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f4f4f4;
+      transition: background-color 0.3s ease;
     }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
-      animation: fadeIn 1s ease-in;
+    header {
+      background-color: #1f1f1f;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .menu-toggle {
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
+    }
+
+    .menu-toggle.active {
+      color: #00bcd4;
+    }
+
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: #2e2e2e;
+      width: 100%;
+      text-align: left;
+      animation: fadeIn 0.3s ease;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      z-index: 999;
+    }
+
+    nav a {
+      padding: 1rem;
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid #444;
+    }
+
+    nav a:hover {
+      background-color: #00bcd4;
+      color: #1f1f1f;
+    }
+
+    .show-menu {
+      display: flex;
+    }
+
+    .content {
+      padding: 2rem;
+      transition: filter 0.3s ease;
+    }
+
+    .blurred {
+      filter: blur(3px);
+    }
+
+    .resume-button {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: #00bcd4;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .resume-button:hover {
+      background-color: #0097a7;
     }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-10px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    .navbar {
-      background-color: #333;
-      padding: 1rem;
-      position: relative;
-    }
-
-    .menu-toggle {
-      font-size: 1.8rem;
-      color: #fff;
-      cursor: pointer;
-      background-color: transparent;
-      border: none;
-      outline: none;
-      transition: color 0.3s, background-color 0.3s;
-    }
-
-    .menu-toggle.active {
-      color: #fff;
-      background-color: #555;
-      padding: 0.3rem 0.6rem;
-      border-radius: 4px;
-    }
-
-    .menu {
-      display: none;
-      flex-direction: column;
-      background-color: #444;
-      margin-top: 1rem;
-      animation: slideDown 0.3s ease-out forwards;
-    }
-
-    @keyframes slideDown {
-      0% { opacity: 0; transform: scaleY(0); transform-origin: top; }
-      100% { opacity: 1; transform: scaleY(1); transform-origin: top; }
-    }
-
-    .menu a {
-      padding: 1rem;
-      color: white;
-      text-decoration: none;
-      border-bottom: 1px solid #555;
-      transition: background-color 0.3s;
-    }
-
-    .menu a:hover {
-      background-color: #555;
-    }
-
-    .container {
-      padding: 2rem;
-    }
-
-    .section {
-      margin-top: 2rem;
-    }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      line-height: 1.6;
-    }
-
-    a.linkedin {
-      color: #0A66C2;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    a.linkedin:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
-  <nav class="navbar">
-    <button id="menuBtn" class="menu-toggle">☰</button>
-    <div id="menu" class="menu">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#resume">Resume</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </div>
+  <header>
+    <h1>My Portfolio</h1>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <nav id="menu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#resume">Resume</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <div class="container">
-    <section id="home" class="section">
-      <h1>Welcome to My Portfolio</h1>
-      <p>This is a professional introduction to who I am and what I do.</p>
+  <div class="content" id="mainContent">
+    <section id="home">
+      <h2>Welcome to My Portfolio</h2>
+      <p>This is the home page of my personal site.</p>
     </section>
 
-    <section id="about" class="section">
-      <h1>About Me</h1>
-      <p>Hi, I’m a 1st-year Integrated MCA student passionate about AI, Machine Learning, and Software Development.</p>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hi! I'm a passionate learner pursuing Integrated MCA. I love working on AI/ML projects and developing full-stack web applications.</p>
     </section>
 
-    <section id="resume" class="section">
-      <h1>Resume</h1>
-      <p>You can find my complete resume <a href="#">here</a>.</p>
+    <section id="resume">
+      <h2>Resume</h2>
+      <p>Download my resume here:</p>
+      <a href="https://drive.google.com/file/d/your_resume_id/view?usp=sharing" target="_blank" class="resume-button">Download Resume</a>
     </section>
 
-    <section id="portfolio" class="section">
-      <h1>Portfolio</h1>
-      <p>This section will showcase all my projects and work samples.</p>
+    <section id="portfolio">
+      <h2>Projects</h2>
+      <p>Coming soon: AI projects, web apps, and more!</p>
     </section>
 
-    <section id="contact" class="section">
-      <h1>Contact</h1>
-      <p>Get in touch with me via <a class="linkedin" href="https://www.linkedin.com/in/YOUR-LINKEDIN-ID" target="_blank">LinkedIn</a>.</p>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Connect with me:</p>
+      <p>
+        <a href="https://www.linkedin.com/in/yourusername/" target="_blank">LinkedIn Profile</a>
+      </p>
     </section>
   </div>
 
   <script>
-    const menuBtn = document.getElementById("menuBtn");
-    const menu = document.getElementById("menu");
-
-    menuBtn.addEventListener("click", () => {
-      menu.classList.toggle("active");
-      menuBtn.classList.toggle("active");
-
-      if (menu.style.display === "flex") {
-        menu.style.display = "none";
-      } else {
-        menu.style.display = "flex";
-      }
-    });
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      const content = document.getElementById("mainContent");
+      const toggle = document.querySelector(".menu-toggle");
+      
+      menu.classList.toggle("show-menu");
+      content.classList.toggle("blurred");
+      toggle.classList.toggle("active");
+    }
   </script>
 </body>
 </html>
