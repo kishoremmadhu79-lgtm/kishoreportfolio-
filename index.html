@@ -1,7 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
@@ -10,98 +7,92 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-    body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background-color: #333;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: #444;
-    }
-    nav a {
-      padding: 1rem;
-      color: white;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    nav a:hover {
-      background-color: #666;
-    }
-    .tab {
-      display: none;
-      padding: 2rem;
-    }
-    .tab.active {
-      display: block;
-    }
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-      }
-    }
+    }body {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #444;
+  padding: 0.5rem 0;
+  flex-wrap: wrap;
+}
+
+nav button {
+  background-color: #666;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+nav button:hover {
+  background-color: #888;
+}
+
+.tab {
+  display: none;
+  padding: 2rem;
+}
+
+.tab.active {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav button {
+    width: 90%;
+  }
+}
+
   </style>
-</head>
-<body>
+</head><body>
   <header>
-    <h1>Welcome to My Portfolio</h1>
-  </header>
-  <nav>
-    <a href="#" onclick="showTab('home')">Home</a>
-    <a href="#" onclick="showTab('about')">About</a>
-    <a href="#" onclick="showTab('resume')">Resume</a>
-    <a href="#" onclick="showTab('portfolio')">Portfolio</a>
-    <a href="#" onclick="showTab('contact')">Contact</a>
-  </nav>
-
-  <div id="home" class="tab active">
-    <h2>Home</h2>
-    <p>Welcome to my personal portfolio website. Here you will find everything about me and my journey in technology.</p>
-  </div>
-
-  <div id="about" class="tab">
+    <h1>My Portfolio</h1>
+  </header>  <nav>
+    <button onclick="openTab('home')">Home</button>
+    <button onclick="openTab('about')">About</button>
+    <button onclick="openTab('resume')">Resume</button>
+    <button onclick="openTab('portfolio')">Portfolio</button>
+    <button onclick="openTab('contact')">Contact</button>
+  </nav>  <section id="home" class="tab active">
+    <h2>Welcome to My Portfolio</h2>
+    <p>This is the home page.</p>
+  </section>  <section id="about" class="tab">
     <h2>About Me</h2>
-    <p>I'm an Integrated MCA student passionate about Artificial Intelligence, Machine Learning, and Full-Stack Development. This is where I showcase my skills and experiences.</p>
-  </div>
-
-  <div id="resume" class="tab">
+    <p>Insert your bio here.</p>
+  </section>  <section id="resume" class="tab">
     <h2>Resume</h2>
-    <p><strong>Education:</strong> Integrated MCA, [Your University Name]</p>
-    <p><strong>Skills:</strong> HTML, CSS, JavaScript, Python, C++, AI/ML, Git</p>
-    <p><strong>Certifications:</strong> IBM AI Engineering, Google Data Analytics, etc.</p>
-  </div>
-
-  <div id="portfolio" class="tab">
+    <p>Insert your resume information here.</p>
+  </section>  <section id="portfolio" class="tab">
     <h2>Portfolio</h2>
-    <ul>
-      <li>Personal Portfolio Website</li>
-      <li>AI Chatbot Project</li>
-      <li>ML Model for Prediction</li>
-      <li>Responsive Blog using HTML/CSS/JS</li>
-    </ul>
-  </div>
-
-  <div id="contact" class="tab">
+    <p>Insert your portfolio projects here.</p>
+  </section>  <section id="contact" class="tab">
     <h2>Contact</h2>
-    <p>Email: yourname@example.com</p>
-    <p>LinkedIn: linkedin.com/in/yourprofile</p>
-    <p>GitHub: github.com/yourprofile</p>
-  </div>
-
-  <script>
-    function showTab(tabId) {
+    <p>Insert your contact info here.</p>
+  </section>  <script>
+    function openTab(tabId) {
       const tabs = document.querySelectorAll('.tab');
-      tabs.forEach(tab => tab.classList.remove('active'));
+      tabs.forEach(tab => {
+        tab.classList.remove('active');
+      });
       document.getElementById(tabId).classList.add('active');
     }
-  </script>
-</body>
-</html>
+  </script></body></html>
