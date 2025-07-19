@@ -51,7 +51,7 @@ body {
 }
 
 .section {
-  display: block;
+  display: none;
   padding: 2rem;
   color: white;
   min-height: 100vh;
@@ -59,6 +59,7 @@ body {
 
 /* Home */
 #home {
+    display: block;
   background: linear-gradient(45deg, #2c3e50, #3498db);
   animation: gradientShift 10s ease infinite;
 }
