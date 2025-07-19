@@ -2,115 +2,155 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Portfolio</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f4f4;
-      color: #333;
-    }
-
-    header {
-      background: #1e1e2f;
-      color: white;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .menu-btn {
-      font-size: 2rem;
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 200px;
-      height: 100%;
-      background: #2c2c3e;
-      display: flex;
-      flex-direction: column;
-      padding-top: 3rem;
-      transition: left 0.3s ease-in-out;
-    }
-
-    nav a {
-      padding: 1rem;
-      color: white;
-      text-decoration: none;
-      border-bottom: 1px solid #444;
-      transition: background 0.2s;
-    }
-
-    nav a:hover {
-      background: #444;
-    }
-
-    nav.open {
-      left: 0;
-    }
-
-    main {
-      padding: 2rem;
-    }
-
-    section {
-      display: none;
-      animation: fadeIn 0.5s forwards;
-    }
-
-    section.active {
-      display: block;
+      background-color: #f4f4f4;
+      animation: fadeIn 1s ease-in;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(-10px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    .navbar {
+      background-color: #333;
+      padding: 1rem;
+      position: relative;
+    }
+
+    .menu-toggle {
+      font-size: 1.8rem;
+      color: #fff;
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      transition: color 0.3s, background-color 0.3s;
+    }
+
+    .menu-toggle.active {
+      color: #fff;
+      background-color: #555;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .menu {
+      display: none;
+      flex-direction: column;
+      background-color: #444;
+      margin-top: 1rem;
+      animation: slideDown 0.3s ease-out forwards;
+    }
+
+    @keyframes slideDown {
+      0% { opacity: 0; transform: scaleY(0); transform-origin: top; }
+      100% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+    }
+
+    .menu a {
+      padding: 1rem;
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid #555;
+      transition: background-color 0.3s;
+    }
+
+    .menu a:hover {
+      background-color: #555;
+    }
+
+    .container {
+      padding: 2rem;
+    }
+
+    .section {
+      margin-top: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    a.linkedin {
+      color: #0A66C2;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.linkedin:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-    <h1>My Portfolio</h1>
-  </header>
-
-  <nav id="sidebar">
-    <a href="#" onclick="showTab('home')">Home</a>
-    <a href="#" onclick="showTab('about')">About</a>
-    <a href="#" onclick="showTab('resume')">Resume</a>
-    <a href="#" onclick="showTab('portfolio')">Portfolio</a>
-    <a href="#" onclick="showTab('contact')">Contact</a>
+  <nav class="navbar">
+    <button id="menuBtn" class="menu-toggle">☰</button>
+    <div id="menu" class="menu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#resume">Resume</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
-  <main>
-    <section id="home" class="active"><h2>Welcome to My Portfolio</h2><p>This is the home page.</p></section>
-    <section id="about"><h2>About Me</h2><p>Everything about me.</p></section>
-    <section id="resume"><h2>Resume</h2><p>My academic and work experience.</p></section>
-    <section id="portfolio"><h2>My Work</h2><p>Project showcase.</p></section>
-    <section id="contact"><h2>Contact</h2><p>Email, phone, and social links.</p></section>
-  </main>
+  <div class="container">
+    <section id="home" class="section">
+      <h1>Welcome to My Portfolio</h1>
+      <p>This is a professional introduction to who I am and what I do.</p>
+    </section>
+
+    <section id="about" class="section">
+      <h1>About Me</h1>
+      <p>Hi, I’m a 1st-year Integrated MCA student passionate about AI, Machine Learning, and Software Development.</p>
+    </section>
+
+    <section id="resume" class="section">
+      <h1>Resume</h1>
+      <p>You can find my complete resume <a href="#">here</a>.</p>
+    </section>
+
+    <section id="portfolio" class="section">
+      <h1>Portfolio</h1>
+      <p>This section will showcase all my projects and work samples.</p>
+    </section>
+
+    <section id="contact" class="section">
+      <h1>Contact</h1>
+      <p>Get in touch with me via <a class="linkedin" href="https://www.linkedin.com/in/YOUR-LINKEDIN-ID" target="_blank">LinkedIn</a>.</p>
+    </section>
+  </div>
 
   <script>
-    function toggleMenu() {
-      document.getElementById("sidebar").classList.toggle("open");
-    }
+    const menuBtn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
 
-    function showTab(tabId) {
-      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
-      document.getElementById(tabId).classList.add("active");
-      document.getElementById("sidebar").classList.remove("open"); // Auto-close menu
-    }
+    menuBtn.addEventListener("click", () => {
+      menu.classList.toggle("active");
+      menuBtn.classList.toggle("active");
+
+      if (menu.style.display === "flex") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "flex";
+      }
+    });
   </script>
-
 </body>
 </html>
