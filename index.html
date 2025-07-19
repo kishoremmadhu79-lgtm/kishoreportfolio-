@@ -5,17 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kishore's Portfolio</title>
   <style>
+    /* Global Reset */
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      font-family: "Segoe UI", sans-serif;
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
       background: linear-gradient(to bottom right, #f0f0f0, #e0e0e0);
       color: #333;
       min-height: 100vh;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     header {
@@ -99,9 +106,128 @@
     .resume-btn:hover {
       background-color: #1976D2;
     }
+
+    /* Fancy Animated Buttons */
+    a[style*="--clr"] {
+      position: relative;
+      display: inline-block;
+      padding: 12px 30px;
+      color: var(--clr);
+      text-transform: uppercase;
+      text-decoration: none;
+      overflow: hidden;
+      margin: 20px;
+      letter-spacing: 2px;
+      transition: 0.2s;
+    }
+
+    a[style*="--clr"] span {
+      position: absolute;
+      display: block;
+      background: var(--clr);
+      transition: all 0.5s ease;
+    }
+
+    a[style*="--clr"] span:nth-child(1),
+    a[style*="--clr"] span:nth-child(2) {
+      height: 1.5px;
+      width: 50%;
+    }
+
+    a[style*="--clr"] span:nth-child(1) {
+      left: 0;
+      top: 0;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition-delay: 0s;
+    }
+
+    a[style*="--clr"]:hover span:nth-child(1) {
+      transform: scaleX(1);
+    }
+
+    a[style*="--clr"] span:nth-child(2) {
+      right: 0;
+      top: 0;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition-delay: 0.2s;
+    }
+
+    a[style*="--clr"]:hover span:nth-child(2) {
+      transform: scaleX(1);
+    }
+
+    a[style*="--clr"] span:nth-child(3),
+    a[style*="--clr"] span:nth-child(4) {
+      width: 1.5px;
+      height: 100%;
+    }
+
+    a[style*="--clr"] span:nth-child(3) {
+      right: 0;
+      top: 0;
+      transform-origin: bottom;
+      transform: scaleY(0);
+      transition-delay: 0.4s;
+    }
+
+    a[style*="--clr"]:hover span:nth-child(3) {
+      transform: scaleY(1);
+    }
+
+    a[style*="--clr"] span:nth-child(4) {
+      left: 0;
+      top: 0;
+      transform-origin: bottom;
+      transform: scaleY(0);
+      transition-delay: 0.4s;
+    }
+
+    a[style*="--clr"]:hover span:nth-child(4) {
+      transform: scaleY(1);
+    }
+
+    a[style*="--clr"] span:nth-child(5),
+    a[style*="--clr"] span:nth-child(6) {
+      height: 1.5px;
+      width: 50.5%;
+      bottom: 0;
+    }
+
+    a[style*="--clr"] span:nth-child(5) {
+      left: 0;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition-delay: 0.8s;
+    }
+
+    a[style*="--clr"]:hover span:nth-child(5) {
+      transform: scaleX(1);
+    }
+
+    a[style*="--clr"] span:nth-child(6) {
+      right: 0;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition-delay: 0.8s;
+    }
+
+    a[style*="--clr"]:hover span:nth-child(6) {
+      transform: scaleX(1);
+    }
+
+    .footer {
+      background-color: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
+
   <header>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     <nav id="menu">
@@ -114,65 +240,90 @@
   </header>
 
   <section id="home" class="active">
-      <div class="container">
-    <img src="profile.jpg" alt="Profile Photo" class="profile" />
-    <h1>Hi, I'm Kishore M Madhu</h1>
-    <p>
-      🎓 I'm an IMCA student passionate about turning data into decisions. I specialize in <strong>Data Analytics</strong> and <strong>Digital Marketing</strong>, currently expanding my skills in <strong>AI and Machine Learning</strong> through hands-on projects.
-    </p>
+    <div class="container">
+      <img src="profile.jpg" alt="Profile Photo" class="profile" />
+      <h1>Hi, I'm Kishore M Madhu</h1>
+      <p>
+        🎓 I'm an IMCA student passionate about turning data into decisions.
+        I specialize in <strong>Data Analytics</strong> and <strong>Digital Marketing</strong>,
+        currently expanding my skills in <strong>AI and Machine Learning</strong> through hands-on projects.
+      </p>
+      <!-- Fancy Buttons -->
+      <a href="#" style="--clr:#00eeff;">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        Button 1
+      </a>
+      <a href="#" style="--clr:#fbff00;">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        Button 2
+      </a>
+    </div>
   </section>
 
   <section id="about">
-    <h1>About Me</h1>
-    <p>Hi, I am a first-year Integrated Master of Computer Applications (IMCA) student at De Paul Institute of Science & Technology (DIST), affiliated with MG University. With a strong foundation in computer science and a deep passion for technology, I am currently specializing in Data Analytics and Digital Marketing — two fields where data-driven decisions and strategic thinking meet.<br><br>
+    <div class="container">
+      <h1>About Me</h1>
+      <p>
+        Hi, I am a first-year Integrated Master of Computer Applications (IMCA) student at De Paul Institute of Science & Technology (DIST),
+        affiliated with MG University. With a strong foundation in computer science and a deep passion for technology,
+        I am currently specializing in Data Analytics and Digital Marketing — two fields where data-driven decisions and strategic thinking meet.
+        <br><br>
+        My academic journey is complemented by hands-on learning through certified courses, self-initiated projects,
+        and continuous exploration of real-world tools like Excel, SQL, Power BI, Tableau, Google Analytics, Meta Ads, and SEO.
+        I am also familiar with foundational AI and Machine Learning concepts using tools such as Scikit-learn, TensorFlow, and PyTorch,
+        which I plan to integrate into future projects for smarter insights and automation.
+        <br><br>
 
-My academic journey is complemented by hands-on learning through certified courses, self-initiated projects, and continuous exploration of real-world tools like Excel, SQL, Power BI, Tableau, Google Analytics, Meta Ads, and SEO. I am also familiar with foundational AI and Machine Learning concepts using tools such as Scikit-learn, TensorFlow, and PyTorch, which I plan to integrate into future projects for smarter insights and automation.<br><br> 
+        🔍 Career Focus:<br>
+        I am actively seeking opportunities in Data Analytics and Digital Marketing roles, where I can apply my analytical mindset,
+        creativity, and technical skills to drive measurable results for businesses.
+        <br><br>
 
-🔍 Career Focus:<br>
-I am actively seeking opportunities in Data Analytics and Digital Marketing roles, where I can apply my analytical mindset, creativity, and technical skills to drive measurable results for businesses.<br><br>
+        ✅ Current Skills & Tools:<br><br>
+        Data Analytics: Excel, SQL, Tableau, Power BI<br>
+        Marketing Tools: Google Analytics, Meta Ads Manager, SEO tools, Canva<br>
+        Programming: Python (Data Handling, Visualization)<br><br>
 
-✅ Current Skills & Tools:<br><br>
+        🚀 Project Interests:<br><br>
+        - Building dynamic dashboards and interactive reports<br>
+        - Creating data-driven digital marketing campaigns<br>
+        - Combining analytics with automation for marketing optimization<br>
+        - Web-based Python apps with integrated data visualizations<br><br>
 
-Data Analytics: Excel, SQL, Tableau, Power BI<br><br>
-
-Marketing Tools: Google Analytics, Meta Ads Manager, SEO tools, Canva<br><br>
-
-Programming: Python (Data Handling, Visualization)<br><br>
-
-
-🚀 Project Interests:<br><br>
-
-Building dynamic dashboards and interactive reports<br><br>
-
-Creating data-driven digital marketing campaigns<br><br>
-
-Combining analytics with automation for marketing optimization<br><br>
-
-Web-based Python apps with integrated data visualizations<br><br>
-
-
-🌱 Professional Goals:<br><br>
-
-Work on impactful projects in analytics and digital marketing<br><br>
-
-Secure internships or freelance roles to gain industry experience<br><br>
-
-Build a strong GitHub and LinkedIn portfolio to showcase my work<br><br>
-
-Contribute to open-source or collaborative tech initiatives </p>
+        🌱 Professional Goals:<br><br>
+        - Work on impactful projects in analytics and digital marketing<br>
+        - Secure internships or freelance roles to gain industry experience<br>
+        - Build a strong GitHub and LinkedIn portfolio to showcase my work<br>
+        - Contribute to open-source or collaborative tech initiatives
+      </p>
+    </div>
   </section>
 
   <section id="portfolio">
-    <h1>My Projects</h1>
-    <p>Project 1: Weather App<br>Project 2: Chatbot with ML<br>Project 3: Responsive Web Design</p>
+    <div class="container">
+      <h1>My Projects</h1>
+      <p>
+        Project 1: Weather App<br>
+        Project 2: Chatbot with ML<br>
+        Project 3: Responsive Web Design
+      </p>
+    </div>
   </section>
 
   <section id="contact">
-    <h1>Contact Me</h1>
-    <p>Email: yourname@example.com<br>LinkedIn: 
-      <a href="https://linkedin.com/in/yourlinkedinid" target="_blank">My LinkedIn</a>
-    </p>
+    <div class="container">
+      <h1>Contact Me</h1>
+      <p>
+        Email: yourname@example.com<br>
+        LinkedIn: 
+        <a href="https://linkedin.com/in/yourlinkedinid" target="_blank">My LinkedIn</a>
+      </p>
+    </div>
   </section>
+
+  <div class="footer">
+    &copy; 2025 Kishore M Madhu | All Rights Reserved.
+  </div>
 
   <script>
     function toggleMenu() {
